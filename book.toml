@@ -1,0 +1,6 @@
+[book]
+authors = ["magicfoodhand"]
+language = "en"
+multilingual = false
+src = "src"
+title = "rigz Documentation"

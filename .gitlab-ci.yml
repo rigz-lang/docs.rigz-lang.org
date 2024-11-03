@@ -1,0 +1,14 @@
+image: peaceiris/mdbook:v0.4.40
+
+stages:
+  - build
+
+build:
+  stage: build
+  script:
+    - mdbook build
+  artifacts:
+    paths:
+      - book
+  rules:
+    - if: $CI_COMMIT_BRANCH == "main"
