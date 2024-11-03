@@ -1,14 +1,17 @@
-image: peaceiris/mdbook:v0.4.40
+image: rust:1.82.0-alpine3.19
 
-stages:
-  - build
+before_script:
+  - cargo install mdbook
 
-build:
-  stage: build
+cache:
+  paths:
+    - .cargo
+
+pages:
   script:
     - mdbook build
   artifacts:
     paths:
-      - book
+      - public
   rules:
-    - if: $CI_COMMIT_BRANCH == "main"
+    - if: $CI_COMMIT_REF_NAME == $CI_DEFAULT_BRANCH

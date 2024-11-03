@@ -4,3 +4,6 @@ language = "en"
 multilingual = false
 src = "src"
 title = "rigz Documentation"
+
+[build]
+build-dir = "public"
